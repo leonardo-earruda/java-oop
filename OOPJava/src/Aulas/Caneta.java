@@ -3,25 +3,39 @@ package Aulas;
 public class Caneta {
 
     public String modelo;
-    public String cor;
     private float ponta;
-    protected int carga;
+    private String cor;
     private boolean tampada;
 
-    public void status() {
-        System.out.println("Uma caneta " + this.cor);
-        System.out.println("Esta tampada? " + this.tampada);
-        System.out.println("Modelo: " + this.modelo);
-        System.out.println("Ponta: " + this.ponta);
-        System.out.println("Carga: " + this.carga);
+    public Caneta(String m, String c, float p, boolean t) {  // Este é o método construtor
+        this.setModelo(m);
+        this.setCor(c);
+        this.setPonta(p);
+        this.setTampada(t);
     }
 
-    public void rabiscar() {
-        if (this.tampada) {
-            System.out.println("ERRO! Não posso rabiscar");
-        } else {
-            System.out.println("Estou rabiscando...");
-        }
+    public String getModelo() {
+        return this.modelo;
+    }
+
+    public void setModelo(String m) {
+        this.modelo = m;
+    }
+
+    public Float getPonta() {
+        return this.ponta;
+    }
+
+    public void setPonta(float p) {
+        this.ponta = p;
+    }
+
+    public void setCor(String c) {
+        this.cor = c;
+    }
+
+    public void setTampada(boolean t) {
+        this.tampada = t;
     }
 
     public void tampar() {
@@ -32,7 +46,11 @@ public class Caneta {
         this.tampada = false;
     }
 
-    public static void main(String[] args) {
-
+    public void status() {
+        System.out.println("SOBRE A CANETA:");
+        System.out.println("Modelo: " + this.getModelo());
+        System.out.println("Ponta: " + this.getPonta());
+        System.out.println("Cor: " + this.cor);
+        System.out.println("Tampada " + this.tampada);
     }
 }
